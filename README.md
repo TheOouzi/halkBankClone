@@ -3,6 +3,6 @@
 
 ##############################
 
-Sorumluluk üstlenmiyorum.
+Biraz kötü oldu kusura bakmayın :)
 
 ##############################
