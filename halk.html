@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            line-height: 1.42857143;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        body,html{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .bgresim{
+            background-image: url("bg.jpg");
+            background-repeat: no-repeat;
+            /* bu özellik ile resmin küçültüp ideal hale getirdik ÖNEMLİ BİR ÖZELLİK */
+            background-size: contain;
+            height: 75%;
+        }
+        .ara_menu{
+            width: 100%;
+            height: 7%;
+            background-color: #104879;
+            float: left;
+            margin-top: -35px;
+            box-shadow: 2px 2px black;
+            border-bottom: 1px solid black;
+            padding: 15px 0 0;
+        }
+        .alt_iletisim{
+            width: 100%;
+            height:250px;
+            float: left;
+            background:url(alt.png) no-repeat;
+            background-size: contain;
+        }
+        .acıklama{
+            width: 500px;
+            height: 300px;
+            float: left;
+            margin: 100px 0 0 150px;
+        }
+        .bilgi_buton{
+            width: 250px;
+            height: 40px;
+            text-align: center;
+            background-color: #f47421;
+            color: white;
+            font:bold;
+            float: left;
+            border: none;
+            margin-left: 50px;
+            margin-top: 30px;
+        }
+        #kutu1,#kutu2,#kutu3{
+            width: 15px;
+            height:15px;
+            border-radius: 7px;
+            background-color: white;
+            float: left;
+            margin-left: 5px;
+            cursor: pointer;
+        } 
+        .kutucuklar{
+            width:60px;
+            height: 15px;
+            float: left;
+            margin: 430px 0 0 -500px;
+        }
+        .sube_giris{
+            width: 500px;
+            height: 350px;
+            background-color: white;
+            border-top: 5px solid #f47421;
+            border-radius: 10px;
+            float: left;
+            margin: 100px 0 0 150px;
+        }
+        .kurumsal_box{
+            width: 100px;
+            height: 25px;
+            background-color: #f47421;
+            float: right;
+            border-bottom-left-radius: 7px;
+            color: white;
+            font-size: smaller;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        .resim{
+            float: right;
+            font-size: 0;
+            width: 13px;
+            height: 13px;
+            display: inline-block;
+            background: url(white-arrow.png) no-repeat;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+        .giris_ic{
+            width: 450px;
+            height: 310px;
+            float: left;
+            margin: 0 0 0 25px;
+        }
+        .logo_login{
+            background: url(HB_lock.png) no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            width: 35px;
+            height: 45px;
+            margin: 10px 10px 0 0;
+            float: left;
+        }
+        #tc_input{
+            width: 450px;
+            height: 50px;
+            border: 1px solid #0bbbef;
+            border-radius: 8px;
+            float: left;
+            font-size: 14px;
+            
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #pass_input{
+            width: 220px;
+            height: 50px;
+            border: 1px solid #0bbbef;
+            border-radius: 8px;
+            font-size: 14px;
+            float: left;
+            margin: 20px 20px 50px 0;
+        }
+        #int_sube{
+            width: 205px;
+            height: 50px;
+            color: #666;
+            background-color: white;
+            border: 1px solid #0bbbef;
+            border-radius: 8px;
+            float: left;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        .Sube,.yatırım{
+            width: 200px;
+            height: 30px;
+            float: left;
+            background-color: white;
+            color: rgb(36, 33, 33);
+            border: 1px solid #0bbbef;
+            border-bottom-left-radius: 8px ;
+            border-bottom-right-radius:8px ; 
+        }
+        .sanal_klavye{
+            color: #1b6fb5;
+            height: 18px;
+            display: inline-block;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .unuttum{
+            color: #1b6fb5;
+            height: 18px;
+            cursor: pointer;
+        }
+        #giris_buton{
+            width: 120px;
+            height: 40px;
+            background-color:#0bbbef ;
+            border-radius: 10px;
+            float: right;
+            border: 0px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+
+        }
+        .sp{
+            width: 200px;
+            height: 10px;
+        }
+        .halk_logo{
+            background: url(HALKBANK_logo.svg) no-repeat;
+            /* contain sayesinde istenilen resmi küçültüp büyütebiliriz */
+            background-size: contain;
+            width:20%;
+            height: 65%;
+            margin: 0 0 0 200px;
+            float: left;
+        }
+        .menuu{
+            width: 30%;
+            height:60%;
+            float: right;
+            margin-right: 100px;
+
+        }
+        .menuu span{
+            float: left;
+            color: #c6d0db;
+            margin-left: 20px;
+            line-height: 25px;
+            font-size: 12px;
+        }
+        /* .anahtar{
+            background:url(anahtar.png) no-repeat ;
+            background-size: contain;
+            width: 80px;
+            height: 80px;
+            float: left;
+            margin:0 0 0 80px;
+            
+        } */
+        /* .box1{
+            width: 250px;
+            height: 160px;
+            border-bottom: 5px solid rgb(24, 172, 24);
+            margin: 0 0 0 200px;
+            float: left;
+            
+
+        } */
+        /* .pass_olustur{
+            color: white;
+            text-align: center;
+            float: left;
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px 0 0 50px;
+        } */
+        /* .box2{
+            width: 250px;
+            height: 160px;
+            border-bottom: 5px solid orangered;
+            margin: 0 0 0 20px;
+            float: left;
+        }
+        .merkez{
+            background: url(merkes.png) no-repeat;
+            background-size: contain;
+            width: 80px;
+            height: 80px;
+            float: left;
+            margin-left: 80px;
+        }
+        .mutlu_musteri{
+            color: white;
+            text-align: center;
+            float: left;
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px 0 0 30px;
+        } */
+        
+    </style>
+</head>
+<body>
+    <div class="bgresim">
+        <div class="acıklama">
+            <p style="display:block; margin: 70px 0 0 50px; height: 100px; text-align: left; color: white; width: 500px; font-family: fantasy; font-size: medium;  float: left; flex-wrap: wrap; font"><b style="font-size: 45px; line-height: 48px; color: #fff; margin-bottom: 5px; letter-spacing: -1px; font-weight: 500;">Güvenliğiniz için</b> <br> Halkbank İnternet Şubesi girişlerinde; cep telefonu numarası, <br> marka ve modeli bilgileriniz istenmez.</p>
+            <input type="button" value="Detaylı bilgi için tıklayınız" class="bilgi_buton">
+            
+        </div>
+        <div class="kutucuklar">
+            <div id="kutu1"></div><div id="kutu2"></div><div id="kutu3"></div>
+        </div>
+        <div class="sube_giris">
+            <div class="kurumsal_box">Kurumsal<span class="resim"></span></div>
+            <div class="giris_ic">
+                <span class="logo_login"></span>
+                <p style="color:#f47421; font-size: x-large; text-align: left; font-family: inherit; display: block; margin-left:50px;"><b>İnternet Şube Giriş</b></p>
+                <form>
+                    <!-- input içindeki placeholder özelliği arkaplandaki yazıyı rengini kısıyor ve içine girince kayboluyor. -->
+                    <input type="number"  id="tc_input" placeholder="Müşteri/TC Kimlik Numarası">
+                    <input type="password"  id="pass_input" placeholder="Parola">
+                    <select  id="int_sube" onclick="radius()">
+                        <option class="Sube" value="İnternet Şube">İnternet Şube</option>
+                        <option class="yatırım" value="Halk Yatırım">Halk Yatırım</option>
+                    </select>
+                    <div class="sp">
+                        <span class="sanal_klavye">Sanal Klavye</span><br>
+                        <span class="unuttum">Parolamı Bilmiyorum/Blokeli</span>
+                    </div>
+                    <input type="button" id="giris_buton" value="Giriş">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="ara_menu">
+        <div class="halk_logo"></div>
+        <div class="menuu">
+            <span>English</span>
+            <span>Sıkça Sorulan Sorular</span>
+            <span>ATM ve Şubeler</span>
+            <span>Duyurular</span>
+        </div>
+    </div>
+    <div class="alt_iletisim">
+        <!-- <div class="box1">
+            <div class="anahtar"></div>
+            <span class="pass_olustur"><b>Parola Oluşturma</b></span>
+        </div>
+        <div class="box2">
+            <div class="merkez"></div>
+            <span class="mutlu_musteri"><b>Mutlu Müşteri Merkezi</b></span>
+        </div> -->
+    </div>
+    
+</body>
+</html>
